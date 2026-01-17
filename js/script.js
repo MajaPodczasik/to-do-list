@@ -23,6 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
         render();
     }
 
+    const toggleTaskDone = (taskIndex) => {
+        tasks[taskIndex].done = !tasks[taskIndex].done;
+
+        render();
+    }
+
 
     const render = () => {
         let htmlString = "";
@@ -31,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             htmlString += `
                     <li
                         ${task.done ? " style=\"text-decoration: line-through\"" : ""}>
+                        <button class= "js-done">done?</button>
                         <button class="js-remove">remove</button>
                         ${task.content}
                     </li>
@@ -46,9 +53,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 removeTask(index);
             });
         });
+
+        const toggleDoneButtons = document.querySelectorAll(".js-done");
+
+        toggleDoneButtons.forEach((toggleDoneButton, index) => {
+            toggleDoneButton.addEventListener("click", () => {
+                toggleTaskDone(index);
+            });
+        });
     };
 
-    
+
     const onFormSubmit = (event) => {
         event.preventDefault();
 
