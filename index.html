@@ -6,16 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
     <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/container.css"/>
+    <link rel="stylesheet" href="css/todo.css"/>
 
 </head>
 
 <body>
-    <form class="js-form">
+    <div class="container">
+    <h1>To-Do</h1>
+    <form class="js-form form">
         <input class="js-newTask">
-        <button>Add task</button>
+        <button class="addTask">Add task</button>
     </form>
 
-    <ul class="js-tasks"></ul>
+    <ul class="js-tasks taskList"></ul>
+    </div>
 </body>
 
 </html>

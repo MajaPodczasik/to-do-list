@@ -1,13 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const tasks = [
-        {
-            content: "Learn JavaScript",
-            done: false,
-        },
-        {
-            content: "eat dinner",
-            done: true,
-        },
+      
     ];
 
     const addNewTask = (newTaskContent) => {
@@ -28,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         render();
     }
-    const bindEvents = () =>  {
+    const bindEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
 
         removeButtons.forEach((removeButton, index) => {
@@ -37,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        const toggleDoneButtons = document.querySelectorAll(".js-done");
+        const toggleDoneButtons = document.querySelectorAll(".js-toggle-done");
 
         toggleDoneButtons.forEach((toggleDoneButton, index) => {
             toggleDoneButton.addEventListener("click", () => {
@@ -51,14 +44,18 @@ document.addEventListener('DOMContentLoaded', () => {
         let htmlString = "";
 
         for (const task of tasks) {
-            htmlString += `
-                    <li
-                        ${task.done ? " style=\"text-decoration: line-through\"" : ""}>
-                        <button class= "js-done">done?</button>
-                        <button class="js-remove">remove</button>
-                        ${task.content}
+                htmlString += `
+                    <li class="todo-item">
+                        <span class="todo-item__text${task.done ? " todo-item__text--done" : ""}">
+                            ${task.content}
+                        </span>
+                        
+                        <div class="todo-item__actions">
+                            <button class="js-toggle-done todo-item__button">done?</button>
+                            <button class="js-remove todo-item__button">remove</button>
+                        </div>
                     </li>
-                   `;
+                `;
         }
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
