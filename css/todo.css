@@ -4,6 +4,27 @@ input, button {
     margin-top: 10px;
 }
 
+input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.addTask {
+    background-color: #ebc189;
+    color: rgb(65, 65, 65);
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.addTask:hover {
+    background-color: #d4a574;
+}
+
 ul {
     list-style: none;
     margin-top: 15px;
@@ -22,10 +43,10 @@ li {
     align-items: center;
     padding: 16px 20px;
     margin-bottom: 12px;
-    background-color: #f9f9f9;
-    border-left: 4px solid #4CAF50;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    border-left: 4px solid #ebc189;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     gap: 16px;
 }
 
@@ -44,17 +65,20 @@ li {
 .todo-item__button {
     padding: 8px 16px;
     cursor: pointer;
-    border: 1px solid #ddd;
-    background-color: white;
-    border-radius: 4px;
+    border: none;
+    background-color: #f0d8bab4;
+    border-radius: 6px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    color: #2c2c2c;
 }
 
 .todo-item__button:hover {
-    background-color: #f0f0f0;
-    border-color: #999;
+    background-color: #b69d81b4;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
 }
 
 .todo-item__text--done {
