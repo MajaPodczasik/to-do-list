@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
-    <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/base.css"/>
     <link rel="stylesheet" href="css/container.css"/>
     <link rel="stylesheet" href="css/todo.css"/>
@@ -13,15 +12,33 @@
 </head>
 
 <body>
-    <div class="container">
-    <h1>To-Do</h1>
-    <form class="js-form form">
-        <input class="js-newTask">
-        <button class="addTask">Add task</button>
-    </form>
+    <header class="site-header container">
+        <h1>To-Do</h1>
+    </header>
 
-    <ul class="js-tasks taskList"></ul>
-    </div>
+    <main class="container">
+        <section class="new-task" aria-labelledby="new-task-heading">
+            <h2 id="new-task-heading" class="visually-hidden">Add task</h2>
+            <form class="js-form form" aria-label="Add new task">
+                <input class="js-newTask" type="text" name="task" placeholder="New task" required />
+                <button class="addTask" type="submit">Add task</button>
+            </form>
+        </section>
+
+        <section class="tasks" aria-labelledby="tasks-heading">
+            <h2 id="tasks-heading">Tasks</h2>
+            <div class="task-controls">
+                <button class="js-toggle-completed" type="button">Hide completed</button>
+                <button class="js-mark-all-done" type="button">Mark all done</button>
+            </div>
+            <ul class="js-tasks taskList" aria-live="polite"></ul>
+        </section>
+    </main>
+
+    <footer class="site-footer container">
+        <p>© To-Do List</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
 </body>
-
-</html>
