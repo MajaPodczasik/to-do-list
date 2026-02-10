@@ -100,6 +100,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
 
+        const controls = document.querySelector('.task-controls');
+        if (controls) {
+            if (tasks.length > 0) {
+                controls.classList.remove('hidden');
+            } else {
+                controls.classList.add('hidden');
+            }
+        }
+
         bindEvents();
     };
 

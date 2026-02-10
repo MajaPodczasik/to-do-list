@@ -32,6 +32,10 @@ input {
     margin-bottom: 12px;
 }
 
+.task-controls.hidden {
+    display: none !important;
+}
+
 .task-controls button {
     flex: 1;
     padding: 10px;
